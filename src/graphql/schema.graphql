@@ -1,0 +1,81 @@
+scalar DateTime
+
+type Query {
+  trades: [Trade!]!
+  currentUser: User!
+}
+
+type Mutation {
+  signupUser(data: SignupInput!): Boolean!
+  loginUser(data: LoginInput!): String!
+  addTrade(data: AddTradeInput!): Boolean!
+}
+
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  fullName: String
+  profilePic: String!
+  balance: String!
+  trades: [Trade!]!
+  numOfTrades: Int!
+  numOfWins: Int!
+  accuracy: String!
+  totalPnL: String!
+  pnlChange: String!
+}
+
+type Trade {  
+  id: String      
+  datetime: DateTime
+  ticker: String
+  size: String
+  trade: TradeBS
+  type: TradeTypes
+  leverage: Int
+  entry: String
+  exit: String
+  pnl: String
+  notes: [Note!]!
+}
+
+type Note {
+  id: Int 
+  note: String
+}
+
+input SignupInput {
+  username: String!
+  email: String!
+  password: String!
+}
+
+input LoginInput {
+  username: String! 
+  password: String! 
+}
+
+input AddTradeInput {
+  ticker: String!
+  trade: TradeBS!
+  type: TradeTypes!
+  size: Int!
+  entry: String!
+  exit: String
+  leverage: Int!
+}
+
+enum TradeTypes {
+  Spot,
+  Futures,
+  Margin,
+  Holdings
+}
+
+enum TradeBS {
+  Long,
+  Short,
+  Buy,
+  Sell
+}

@@ -1,0 +1,44 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Trade {
+  id       String   @id() @default(uuid())
+  datetime DateTime @default(now())
+  ticker   String
+  type     String
+  size    Float
+  trade    String
+  leverage Int
+  entry    Float
+  exit     Float?
+  pnl      Float @default(0)
+  notes    Notes[]
+  userId   String
+  User     User    @relation(fields: [userId], references: [id])
+}
+
+model Notes {
+  id       String   @id() @default(uuid())
+  datetime DateTime @default(now())
+  note     String
+  tradeId  String
+  Trade    Trade    @relation(fields: [tradeId], references: [id])
+}
+
+model User {
+  id         String  @id() @default(uuid())
+  username   String  @unique()
+  email      String  @unique()
+  fullName   String?
+  password   String
+  profilePic String
+  trades     Trade[]
+  balance    Float @default(0)
+  totalPnL   Float? @default(0)
+}

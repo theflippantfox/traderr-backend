@@ -1,0 +1,42 @@
+{
+  "name": "traderr-api",
+  "author": {
+    "name": "theflippantfox",
+    "email": "theflippantfox@protonmail.com"
+  },
+  "scripts": {
+    "start:dev": "nodemon"
+  },
+  "dependencies": {
+    "@graphql-tools/schema": "^8.4.0",
+    "@prisma/client": "^3.15.2",
+    "apollo-server-core": "^3.9.0",
+    "apollo-server-express": "^3.9.0",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "graphql": "^16.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "prisma": "^3.15.2",
+    "tsconfig-paths": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/node": "^17.0.45",
+    "@typescript-eslint/eslint-plugin": "^5.29.0",
+    "@typescript-eslint/parser": "^5.29.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.18",
+    "prettier": "^2.7.1",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.4"
+  },
+  "prisma": {
+    "schema": "src/db/schema.prisma"
+  }
+}
