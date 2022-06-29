@@ -6,7 +6,7 @@
   },
   "scripts": {
     "start:dev": "nodemon",
-    "start": "node build/",
+    "start": "node -r tsconfig-paths/register build/",
     "build": "tsc -p tsconfig.json"
   },
   "dependencies": {
