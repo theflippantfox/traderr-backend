@@ -19,6 +19,9 @@
       "@helpers/*": ["src/helpers/*"]
     }
   },
+  "ts-node": {
+    "require": ["tsconfig-paths/register"]
+  },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

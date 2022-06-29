@@ -6,8 +6,8 @@
   },
   "scripts": {
     "start:dev": "nodemon",
-    "start": "node -r tsconfig-paths/register build/",
-    "build": "tsc -p tsconfig.json"
+    "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register build",
+    "build": "tsc -p tsconfig.json; cp src/graphql/schema.graphql build/graphql/schema.graphql"
   },
   "dependencies": {
     "@graphql-tools/schema": "^8.4.0",
