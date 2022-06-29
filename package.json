@@ -6,7 +6,8 @@
   },
   "scripts": {
     "start:dev": "nodemon",
-    "start": "node build/"
+    "start": "node build/",
+    "build": "tsc -p tsconfig.json"
   },
   "dependencies": {
     "@graphql-tools/schema": "^8.4.0",
