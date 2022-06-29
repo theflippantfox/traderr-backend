@@ -5,7 +5,8 @@
     "email": "theflippantfox@protonmail.com"
   },
   "scripts": {
-    "start:dev": "nodemon"
+    "start:dev": "nodemon",
+    "start": "node build/"
   },
   "dependencies": {
     "@graphql-tools/schema": "^8.4.0",
