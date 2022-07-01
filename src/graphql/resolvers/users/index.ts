@@ -67,5 +67,13 @@ export const userResolver = {
     },
 
     accuracy: async (parent:IUser, _:any, { cache }:IContext) => calculateAccuracy(cache),
+
+    totalPnl: async () => {
+      return '1023.24'
+    },
+
+    pnlChange: async () => {
+      return '64.5'
+    },
   },
 }
